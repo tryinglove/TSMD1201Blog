@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.tsdm.login.dao.LoginDao">
+    <select id="getUserByName" resultType="com.cn.tsdm.domain.AuthorUser">
+        select * from author_user where user_name = #{userName};
+    </select>
+    <insert id="addUser" parameterType="com.cn.tsdm.domain.AuthorUser">
+        insert into author_user values (#{userID},#{userName},#{registerTime},#{password});
+    </insert>
+</mapper>
